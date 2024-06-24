@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * The persistent class for the evento database table.
@@ -37,6 +39,7 @@ public class Evento implements Serializable {
 
 	//bi-directional many-to-one association to Participacion
 	@OneToMany(mappedBy="evento")
+	@JsonIgnore
 	private List<Participacion> participacions;
 
 	public Evento() {

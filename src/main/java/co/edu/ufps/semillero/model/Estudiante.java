@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * The persistent class for the estudiante database table.
@@ -39,6 +41,7 @@ public class Estudiante implements Serializable {
 
 	//bi-directional many-to-one association to Integrante
 	@OneToMany(mappedBy="estudiante")
+	@JsonIgnore
 	private List<Integrante> integrantes;
 
 	public Estudiante() {

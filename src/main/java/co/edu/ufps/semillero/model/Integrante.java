@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * The persistent class for the integrante database table.
@@ -31,14 +33,17 @@ public class Integrante implements Serializable {
 
 	//bi-directional many-to-one association to Actividad
 	@OneToMany(mappedBy="integrante")
+	@JsonIgnore
 	private List<Actividad> actividads;
 
 	//bi-directional many-to-one association to Asistencia
 	@OneToMany(mappedBy="integrante")
+	@JsonIgnore
 	private List<Asistencia> asistencias;
 
 	//bi-directional many-to-one association to Capacitacion
 	@OneToMany(mappedBy="integrante")
+	@JsonIgnore
 	private List<Capacitacion> capacitacions;
 
 	//bi-directional many-to-many association to Periodo
@@ -59,10 +64,12 @@ public class Integrante implements Serializable {
 
 	//bi-directional many-to-one association to Participacion
 	@OneToMany(mappedBy="integrante")
+	@JsonIgnore
 	private List<Participacion> participacions;
 
 	//bi-directional many-to-one association to Proyecto
 	@OneToMany(mappedBy="integrante")
+	@JsonIgnore
 	private List<Proyecto> proyectos;
 
 	public Integrante() {

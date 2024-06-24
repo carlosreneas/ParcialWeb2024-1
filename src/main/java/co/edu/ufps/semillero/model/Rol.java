@@ -4,6 +4,8 @@ import java.io.Serializable;
 import jakarta.persistence.*;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * The persistent class for the rol database table.
@@ -22,6 +24,7 @@ public class Rol implements Serializable {
 
 	//bi-directional many-to-one association to Integrante
 	@OneToMany(mappedBy="rol")
+	@JsonIgnore
 	private List<Integrante> integrantes;
 
 	public Rol() {

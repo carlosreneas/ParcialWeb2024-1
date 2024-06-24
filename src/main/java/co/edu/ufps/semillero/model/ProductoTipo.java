@@ -4,6 +4,8 @@ import java.io.Serializable;
 import jakarta.persistence.*;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * The persistent class for the producto_tipo database table.
@@ -23,6 +25,7 @@ public class ProductoTipo implements Serializable {
 
 	//bi-directional many-to-one association to Participacion
 	@OneToMany(mappedBy="productoTipo")
+	@JsonIgnore
 	private List<Participacion> participacions;
 
 	public ProductoTipo() {

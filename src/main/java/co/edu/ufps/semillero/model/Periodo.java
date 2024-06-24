@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * The persistent class for the periodo database table.
@@ -31,6 +33,7 @@ public class Periodo implements Serializable {
 
 	//bi-directional many-to-one association to Capacitacion
 	@OneToMany(mappedBy="periodo")
+	@JsonIgnore
 	private List<Capacitacion> capacitacions;
 
 	//bi-directional many-to-many association to Integrante

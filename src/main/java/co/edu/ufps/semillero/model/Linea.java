@@ -4,6 +4,8 @@ import java.io.Serializable;
 import jakarta.persistence.*;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * The persistent class for the linea database table.
@@ -31,6 +33,7 @@ public class Linea implements Serializable {
 
 	//bi-directional many-to-one association to Proyecto
 	@OneToMany(mappedBy="linea")
+	@JsonIgnore
 	private List<Proyecto> proyectos;
 
 	public Linea() {
