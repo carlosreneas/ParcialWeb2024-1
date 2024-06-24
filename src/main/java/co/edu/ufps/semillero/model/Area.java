@@ -4,6 +4,8 @@ import java.io.Serializable;
 import jakarta.persistence.*;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * The persistent class for the area database table.
@@ -21,6 +23,7 @@ public class Area implements Serializable {
 	private String nombre;
 
 	//bi-directional many-to-one association to Semillero
+	@JsonIgnore
 	@OneToMany(mappedBy="area")
 	private List<Semillero> semilleros;
 

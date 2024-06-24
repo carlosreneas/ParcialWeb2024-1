@@ -4,6 +4,8 @@ import java.io.Serializable;
 import jakarta.persistence.*;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * The persistent class for the departamento database table.
@@ -22,6 +24,7 @@ public class Departamento implements Serializable {
 
 	//bi-directional many-to-one association to Director
 	@OneToMany(mappedBy="departamento")
+	@JsonIgnore
 	private List<Director> directors;
 
 	public Departamento() {

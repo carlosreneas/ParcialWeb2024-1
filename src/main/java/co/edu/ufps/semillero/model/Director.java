@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * The persistent class for the director database table.
@@ -48,6 +50,7 @@ public class Director implements Serializable {
 
 	//bi-directional many-to-one association to Semillero
 	@OneToMany(mappedBy="director")
+	@JsonIgnore
 	private List<Semillero> semilleros;
 
 	public Director() {

@@ -4,6 +4,8 @@ import java.io.Serializable;
 import jakarta.persistence.*;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * The persistent class for the nivel_formacion database table.
@@ -23,6 +25,7 @@ public class NivelFormacion implements Serializable {
 
 	//bi-directional many-to-one association to Director
 	@OneToMany(mappedBy="nivelFormacion")
+	@JsonIgnore
 	private List<Director> directors;
 
 	public NivelFormacion() {
